@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation</title>
+
+    <!--style-->
+    <link rel="stylesheet" href="../assets/css/reset.css">
+    <link rel="stylesheet" href="../assets/css/style3.css">
+
+    <style>
+        body {
+            background: #bcaaa4;
+        }
+
+        .cube {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            margin: auto;
+            height: 200px;
+            width: 200px;
+            animation: spin 5s infinite linear;
+            transform-style: preserve-3d;
+        }
+
+        @keyframes spin {
+            from {
+                transform: rotateY(0) rotateX(0);
+            }
+
+            to {
+                transform: rotateY(-360deg) rotateX(360deg);
+            }
+        }
+
+        .cube>div {
+            position: absolute;
+            height: 200px;
+            width: 200px;
+            border: 1px solid #333;
+            opacity: .8;
+        }
+
+        .cube>div:hover {
+            opacity: 1;
+            transition: opacity .3s linear;
+        }
+
+        .one {
+            transform: rotateX(90deg) translateZ(100px);
+            background-color: rgba(93, 64, 55, 0.7);
+        }
+
+        .two {
+            transform: translateZ(100px);
+            background-color: rgba(93, 64, 55, 0.5);
+        }
+
+        .three {
+            transform: rotateY(90deg) translateZ(100px);
+            background-color: rgba(93, 64, 55, 0.3);
+        }
+
+        .four {
+            transform: rotateY(180deg) translateZ(100px);
+            background-color: rgba(93, 64, 55, 0.1);
+        }
+
+        .five {
+            transform: rotateY(-90deg) translateZ(100px);
+            background-color: rgba(93, 64, 55, 1);
+        }
+
+        .six {
+            transform: rotateX(-90deg) translateZ(100px);
+            background-color: rgba(0, 0, 0, 0.2);
+        }
+
+        @media (max-width:500px) {
+            .cube {
+                height: 100px;
+                width: 100px;
+            }
+
+            .cube>div {
+                height: 100px;
+                width: 100px;
+            }
+
+            .one {
+                transform: rotateX(90deg) translateZ(50px);
+            }
+
+            .two {
+                transform: translateZ(50px);
+            }
+
+            .three {
+                transform: rotateY(90deg) translateZ(50px);
+            }
+
+            .four {
+                transform: rotateY(180deg) translateZ(50px);
+            }
+
+            .five {
+                transform: rotateY(-90deg) translateZ(50px);
+
+            }
+
+            .six {
+                transform: rotateX(-90deg) translateZ(50px);
+            }
+
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="cube">
+        <div class="one"></div>
+        <div class="two"></div>
+        <div class="three"></div>
+        <div class="four"></div>
+        <div class="five"></div>
+        <div class="six"></div>
+    </div>
+</body>
+
+</html>

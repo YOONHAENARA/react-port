@@ -1,0 +1,211 @@
+@import url('https://cdn.jsdelivr.net/font-iropke-batang/1.2/font-iropke-batang.css');
+
+/* layout */
+body {background: #ECE9E3;}
+#section1 {}
+#section2 {height: 2000px;}
+#section3 {}
+#section4 {height: 5000px;}
+#section5 {}
+#section6 {}
+
+/* scroll */
+.scroll {
+    position: fixed; left: 10px; top: 10px; width: 50px; height: 50px;
+    background: rgba(0,0,0,1); 
+    line-height: 50px;
+    text-align: center;
+    z-index: 10000;
+    color: #fff;
+}
+
+/* container */
+.container {
+/*    max-width: 1400px; */
+    width: 90%;
+    margin: 0 auto; 
+    position: relative; 
+    /* background: rgba(0,0,0,0.3) */;
+}
+
+/* header */
+#header {
+    position: fixed; left: 0; top: 0; 
+    width: 100%; text-align: center;
+    z-index: 1000;
+    background: #ECE9E3;
+}
+#header .logo {
+    font-size: 44px;
+    font-family: 'Advent Pro', sans-serif;
+    padding: 5px;
+    background: #ECE9E3;
+    letter-spacing: 1px;
+}
+#header .nav {
+    border-bottom: 1px solid rgba(0,0,0,0.4); 
+    border-top: 2px solid #000;
+} 
+#header .nav li {display: inline;} 
+#header .nav li a {
+    font-family: 'made_miragethin';
+    font-size: 16px; padding: 15px 20px 15px 20px;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+ 
+
+/* sec1 */
+.sec1 {
+    text-align: center;
+}
+.sec1 h2 {
+    padding-top: 20vh;
+    padding-bottom: 13vh;
+    font-family: 'made_miragethin';
+    font-size: 10vw;
+    line-height: 1.2;
+}
+.sec1 .imgWrap {
+    width: 100%; padding-bottom: 50%;
+    position: relative;
+    overflow: hidden;
+}
+.sec1 .imgWrap .img {
+    position: absolute; left: 50%; top: 50%; 
+    transform: translate(-50%, -50%);
+    background: url(../../static/img/sample_b.jpg);   
+    width: 110%; height: 110%;
+}
+.sec1 .imgWrap .img img {width: 100%;}
+ 
+
+
+/* sec3 */
+.sec3 {padding: 20vh 0;}
+.sec3 h2 {
+    font-size: 9vw; 
+    font-family: 'made_miragethin'; 
+    border-bottom: 2px solid #000; 
+    margin-bottom: 50px;
+    overflow: hidden;
+}
+.sec3 h2 span {
+    opacity: 0;
+    transform: translateY(350px);
+    display: inline-block;
+}
+
+.site-wrap {}
+.site-wrap .site {
+    height: 1100px; margin-bottom: 10px;
+    display: flex;
+    position: relative;
+    margin-bottom: 50px;
+}
+.site-wrap .site:nth-child(2){
+    flex-direction: row-reverse;
+}
+.site-wrap .site .left {
+    background-image: linear-gradient(180deg, #d3cdc3, #ece9e3);
+    flex: 0 0 50%;
+}
+.site-wrap .site .right {
+    flex: 0 0 50%;
+    position: relative;
+}
+.site-wrap .site .center {
+    position: absolute; left: 50%; top: 50%;
+    transform: translate(-50%,-50%);
+    width: 800px; height: 500px; 
+    background: url(../img/site/site3.jpg);
+    background-size: cover;
+}
+.site-wrap .site .center:after {
+    content: '01';
+    position: absolute;
+    right: -3vw; top: -5vw;
+    font-size: 8vw;
+}
+.site-wrap .site:nth-child(2) .center:after{
+    content: '02';
+    right: auto; left: -3vw;
+}
+
+
+/* sec4 */
+.sec4 {}
+.sec4 h2 {
+    font-size: 9vw; 
+    font-family: 'made_miragethin'; 
+    border-bottom: 2px solid #000;
+    margin-bottom: 50px;
+}
+.scriptBox {}
+.scriptBox .script {position: relative;}
+.scriptBox .script .view {
+    overflow: hidden;
+    width: 100%; height: 700px; position: relative;
+    background: url(https://images.unsplash.com/photo-1605723802236-aef70d35a2ce?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3334&q=80);
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+}
+.scriptBox .script .view::after {
+    content: '';
+    position: absolute; left: 0; top: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.3);
+}
+.scriptBox .script .info {
+    position: absolute; left: 100px; bottom: -100px;
+    width: 500px; background: #111;
+    padding: 30px 40px;
+}
+.scriptBox .script .info h4 {
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+}
+.scriptBox .script .info p {
+    font-family: 'Iropke Batang';
+    color: #fff;
+    font-size: 16px;
+    font-weight: normal;
+    padding-bottom: 20px;
+}
+.scriptBox .script .info a {
+    color: #fff; float: right;
+    font-size: 16px;
+    border: 1px solid #fff;
+    padding: 5px 10px;
+    font-family: 'Iropke Batang';
+    
+}
+
+.ball {
+  pointer-events: none;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: gray;
+  animation: implode 1s ease-in-out;
+  animation-fill-mode: both;
+  opacity: .5;
+    z-index: 30;
+}
+
+@keyframes implode {
+  0% {transform: scale(1);}
+  100% {transform: scale(0);}
+}
+ 
+ 
+
+
+
+
+
+
+

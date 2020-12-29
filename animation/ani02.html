@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation</title>
+
+    <!--style-->
+    <link rel="stylesheet" href="../assets/css/reset.css">
+
+    <style>
+        body {
+            background: #000;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        .star_area {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            position: absolute;
+        }
+
+        .star_area>span {
+            z-index: 500;
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background-size: 200px 200px;
+            background-image: radial-gradient(3px 3px at 40px 60px,
+                    gold,
+                    rgba(0, 0, 0, 0)),
+                radial-gradient(2px 2px at 20px 50px, skyblue, rgba(0, 0, 0, 0)),
+                radial-gradient(2px 2px at 30px 100px, #eee, rgba(0, 0, 0, 0)),
+                radial-gradient(2px 2px at 40px 60px, #fff, rgba(0, 0, 0, 0)),
+                radial-gradient(2px 2px at 110px 90px, #ff5252, rgba(0, 0, 0, 0)),
+                radial-gradient(2px 2px at 190px 150px, #ddd, rgba(0, 0, 0, 0)),
+                radial-gradient(2px 2px at 90px 123px, #ddd, rgba(0, 0, 0, 0)),
+                radial-gradient(2px 2px at 200px 200px, #ddd, rgba(0, 0, 0, 0));
+            background-repeat: repeat;
+            transform-origin: 50% 50%;
+            animation: starfield linear infinite;
+        }
+
+        @keyframes starfield {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .star_area>span:nth-child(1) {
+            animation-duration: 10s;
+        }
+
+        .star_area>span:nth-child(2) {
+            animation-duration: 12s;
+        }
+
+        .star_area>span:nth-child(3) {
+            animation-duration: 15s;
+        }
+
+        .star_area>span:nth-child(4) {
+            animation-duration: 21s;
+        }
+
+        .star_area>span:nth-child(5) {
+            animation-duration: 24s;
+        }
+
+        .star_area>span:nth-child(6) {
+            animation-duration: 29s;
+        }
+
+        .star_area>span:nth-child(7) {
+            animation-duration: 32s;
+        }
+
+        .star_area>span:nth-child(8) {
+            animation-duration: 36s;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="star_area">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</body>
+
+</html>

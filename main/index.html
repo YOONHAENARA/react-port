@@ -1,0 +1,334 @@
+
+
+<?php
+    include 'php/connect/connect.php';
+    include 'php/connect/session.php';
+?>
+<!--
+<?php
+    echo '<pre>';
+    var_dump($_SESSION);
+    echo '<pre>';
+?>
+-->
+
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PORTFOLIO</title>
+
+    <!-- style -->
+    <link rel="stylesheet" href="static/css/reset.css">
+    <link rel="stylesheet" href="static/css/style.css">
+
+    <!--web fonts-->
+    <link href="https://fonts.googleapis.com/css2?family=Advent+Pro:wght@100;200&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Arima+Madurai:wght@300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Scope+One&display=swap" rel="stylesheet">
+
+    <!--font awesome-->
+    <script src="https://use.fontawesome.com/1d25719255.js"></script>
+</head>
+
+<body>
+    <?php
+       include 'php/dom/header.php';
+   ?>
+    <!-- //header -->
+
+    <div id="contents">
+        <section id="section1">
+            <div class="container">
+                <div class="sec1">
+                    <h2>WELCOME,<br>MY PORTFOLIO</h2>
+                    <div class="imgWrap">
+                        <div class="img"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- //section1 -->
+        <section id="section2">
+            <div class="sec2">
+                <div class="line_1"></div>
+                <div class="txt">
+                    <h3>PORTFOLIO</h3>
+                    <p>안녕하세요!</p>
+                    <p>잘 부탁드립니다.</p>
+                    <p>신입 웹 퍼블리셔 윤해나라 입니다.</p>
+                </div>
+                <div class="line_2"></div>
+            </div>
+        </section>
+        <!-- //section2 -->
+
+        <section id="section3">
+            <div class="container">
+                <div class="sec3">
+                    <h2>ABOUT</h2>
+                    <div class="sec3_cont">
+                        <div class="bg_img">
+                        </div>
+                        <div class="left_cont">
+                            <div class="img_wrap">
+                                <span class="hide">이미지</span>
+                            </div>
+                            <div class="bottom">
+                                <p>Yoon haenara</p>
+                            </div>
+                        </div>
+                        <div class="txt">
+                            <p>
+                                퇴근 후 들었던 HTML, CSS 수업에서<br>
+                                웹 퍼블리셔에 대한 꿈을 키웠습니다.
+                            </p>
+                            <p>
+                                내 손으로 웹페이지를 만들 수 있다는 것이
+                                신기했습니다.</p>
+                            <p>
+                                검색과 고민 끝에<br>
+                                원하는 효과가 구현되는 게 재밌었고,<br>
+                                정답이 없다는 게 좋았습니다.
+                            </p>
+                            <p>
+                                2020년 봄,<br> 큰 결심을 세웠고<br>
+                                퇴사와 함께 새로운 도전을 시작했습니다.
+                            </p>
+                            <p>
+                                과감한 결정을 내린 만큼<br>
+                                남보다 더 많은 열정을 갖고 있습니다.<br>
+                            </p>
+                            <p>
+                                신입으로서<br>
+                                계속 배우며 나아가겠습니다.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- //section3 -->
+        <section id="section4">
+            <div class="container">
+                <div class="sec4">
+                    <div class="tit">
+                        <h3>SITE</h3>
+                    </div>
+                    <div class="sitelist odd site1">
+                        <div class="gradient_bg">
+                            <h4>
+                                Web Standard
+                            </h4>
+                        </div>
+                        <div class="num">
+                            <p>01</p>
+                        </div>
+                        <div class="site_img">
+                            <span class="hide">웹표준 사이트 이미지</span>
+                        </div>
+                        <div class="btn_cont">
+                            <a href="#" class="btn">VIEW MORE →</a>
+                        </div>
+                    </div>
+                    <!--//site1-->
+                    <div class="sitelist even site2">
+                        <div class="num">
+                            <p>02</p>
+                        </div>
+                        <div class="gradient_bg">
+                            <h4>
+                                Web responsive
+                            </h4>
+                        </div>
+                        <div class="site_img">
+                            <span class="hide">반응형 사이트 이미지</span>
+                        </div>
+                        <div class="btn_cont">
+                            <a href="#" class="btn">VIEW MORE →</a>
+                        </div>
+                    </div>
+                    <!--//site2-->
+                    <div class="sitelist odd site3">
+                        <div class="gradient_bg">
+                            <h4>
+                                중소벤쳐24
+                            </h4>
+                        </div>
+                        <div class="num">
+                            <p>03</p>
+                        </div>
+                        <div class="site_img">
+                            <span class="hide">중소벤쳐24 사이트 이미지</span>
+                        </div>
+                        <div class="btn_cont">
+                            <a href="http://haenara.dothome.co.kr/Portfolio/venture24/index.html" class="btn">VIEW MORE →</a>
+                        </div>
+                    </div>
+                    <!--//site3-->
+                    <div class="sitelist even site4">
+                        <div class="num">
+                            <p>04</p>
+                        </div>
+                        <div class="gradient_bg">
+                            <h4>
+                                Nike
+                            </h4>
+                        </div>
+                        <div class="site_img">
+                            <span class="hide">나이키 사이트 이미지</span>
+                        </div>
+                        <div class="btn_cont">
+                            <a href="#" class="btn">VIEW MORE →</a>
+                        </div>
+                    </div>
+                    <!--//site4-->
+                    <div class="sitelist odd site5">
+                        <div class="gradient_bg">
+                            <h4>
+                                Web Standard
+                            </h4>
+                        </div>
+                        <div class="num">
+                            <p>05</p>
+                        </div>
+                        <div class="site_img">
+                            <span class="hide">사이트 이미지</span>
+                        </div>
+                        <div class="btn_cont">
+                            <a href="#" class="btn">VIEW MORE →</a>
+                        </div>
+                    </div>
+                    <!--//site5-->
+                </div>
+            </div>
+        </section>
+        <!-- //section4 -->
+        <section id="section5">
+            <div class="container">
+                <div class="sec5">
+                    <div class="tit">
+                        <h3>JAVASCRIPT</h3>
+                    </div>
+                    <div class="ani_cont box_left">
+                        <div class="img_wrap">
+                            <div class="link">
+                            </div>
+                        </div>
+                        <div class="desc_box">
+                            <p class="script_num">Javascript 01</p>
+                            <p class="script_tit">TO - DO LIST</p>
+                            <p class="view">CODE VIEW →</p>
+                        </div>
+                    </div>
+                    <div class="ani_cont box_right">
+                        <div class="img_wrap">
+                            <div class="link">
+
+                            </div>
+                        </div>
+
+                        <div class="desc_box">
+                            <p class="script_num">Javascript 02</p>
+                            <p class="script_tit">TO - DO LIST</p>
+                            <p class="view">CODE VIEW →</p>
+
+                        </div>
+                    </div>
+                    <div class="ani_cont box_left last">
+                        <div class="img_wrap">
+                            <div class="link">
+
+                            </div>
+                        </div>
+
+                        <div class="desc_box">
+                            <p class="script_num">Javascript 03</p>
+                            <p class="script_tit">TO - DO LIST</p>
+                            <p class="view">CODE VIEW →</p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- //section5 -->
+        <section id="section6">
+            <div class="container">
+                <div class="sec6">
+                    <div class="tit">
+                        <h3>ANIMATION</h3>
+                    </div>
+                    <div class="cont">
+                        <div class="slide">
+                            <span>Animation</span>
+                            <span>Animation</span>
+                            <span>Animation</span>
+                            <span>Animation</span>
+                            <span>Animation</span>
+                            <span>Animation</span>
+                            <span>Animation</span>
+                        </div>
+                        <div class="wrap">
+                            <div class="ani1"></div>
+                            <div class="ani2"></div>
+                            <div class="ani3"></div>
+                        </div>
+                    </div>
+                    <div class="cont2">
+                        <div class="ani4"></div>
+                        <div class="ani5"></div>
+                        <div class="ani6"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- //section6 -->
+        <section id="section7">
+            <div class="container">
+                <div class="sec7">
+                    <div class="tit">
+                        <h3>CONTACT</h3>
+                    </div>
+                    <div class="cont">
+                        <div class="txt">
+                            <p>Contact Me</p>
+                            <p>Thank you!</p>
+
+                        </div>
+                        <div class="info_list">
+                            <div class="list1 list">
+                                <div class="left">
+                                    <p>T</p>
+                                </div>
+                                <div class="right">
+                                    <p>010-5034-0528</p>
+                                </div>
+                            </div>
+                            <div class="list">
+                                <div class="left">
+                                    <p>E</p>
+                                </div>
+                                <div class="right">
+                                    <p>hnr5034@naver.com</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- //section6 -->
+
+    </div>
+
+    <!--
+    <script src="static/js/jquery-3.5.1.min.js"></script>
+    <script src="static/js/weatherApi.js"></script>
+    <script src="static/js/currentdate.js"></script>
+-->
+</body>
+
+</html>

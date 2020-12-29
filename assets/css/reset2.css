@@ -1,0 +1,127 @@
+@charset "utf-8";
+/* reset */
+
+/* 여백 초기화 */
+body,
+div,
+ul,
+li,
+dl,
+dd,
+dt,
+ol,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+input,
+fieldset,
+legend,
+p,
+select,
+table,
+th,
+td,
+tr,
+textarea,
+button,
+form,
+figure,
+figcaption {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* a 링크 초기화 */
+a {
+    color: #222;
+    text-decoration: none;
+    display: inline-block;
+}
+
+/* 블릿기호 초기화 */
+ul,
+li,
+ol {
+    list-style: none;
+}
+
+
+/*버튼 초기화*/
+button {
+    border: 0;
+    background: none;
+    cursor: pointer;
+
+}
+
+button:focus {
+    outline: none;
+}
+
+/*input box 초기화*/
+input {
+    border: 0;
+    background: none;
+}
+
+/*폰트 스타일 초기화*/
+em,
+address {
+    font-style: normal;
+}
+
+/*display 초기화*/
+span {
+    display: inline-block;
+}
+
+/*아이콘*/
+i {
+    display: inline-block;
+}
+
+
+/* 폰트 초기화 */
+* {
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 300;
+}
+
+/*웹 폰트*/
+@font-face {
+    font-family: 'made_miragethin';
+    src: url('../font/made_mirage_thin_personal_use-webfont.woff2') format('woff2'),
+        url('../font/made_mirage_thin_personal_use-webfont.woff') format('woff'),
+        url('../font/MADE Mirage Thin PERSONAL USE.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body,
+input,
+textarea,
+select,
+button,
+table {
+    color: #222;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: 14px;
+}
+
+/*반응형*/
+img {
+    width: 100%;
+}

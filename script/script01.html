@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript</title>
+
+    <!--style-->
+    <link rel="stylesheet" href="../assets/css/reset.css">
+
+    <style>
+        .script {
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            cursor: none;
+        }
+
+        .script .img {
+            background: url(img/script_img04.jpg)no-repeat center center;
+            background-size: cover;
+            width: 100%;
+            height: 100%;
+            transition: all 0.2s;
+            overflow: visible;
+            z-index: 10000;
+            position: relative;
+
+        }
+
+        .script .img:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100vh;
+            background: rgba(0,0,0,0.5);
+            z-index: -1;
+        }
+
+        .info_page {
+            position: absolute;
+            left: 10px;
+            bottom: 10px;
+            z-index: 5;
+        }
+
+        .info_page li {
+            color: #ddd;
+            list-style: none;
+            margin-bottom: 5px;
+        }
+
+        .info_page li span {
+            color: #fff;
+        }
+
+        .script .txt {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            z-index: -1;
+            font-size: 4vw;
+            color: #fff;
+            font-family: 'Advent Pro', sans-serif;
+        }
+
+        .script .txt p:first-child {
+            font-size: 4vw;
+            color: #fff;
+            font-family: 'Advent Pro', sans-serif;
+        }
+
+        .script .txt em {
+            color: gold;
+            font-family: 'Advent Pro', sans-serif;
+            font-weight: bold;
+
+        }
+
+        .script .txt p:nth-child(2),
+        .script .txt p:nth-child(2)>em {
+            font-family: 'Cafe24Simplehae';
+            font-size: 2vw;
+        }
+
+        .cursor {
+            position: absolute;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background-color: #fff;
+            z-index: 1000;
+            transform: scale(1);
+            user-select: none;
+            pointer-events: none;
+            transition: transform 0.3s ease-in-out;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="script">
+        <div class="img">
+            <div class="cursor"></div>
+            <div class="info_page">
+                <ul>
+                    <li>pageX :<span class="offsetX">0</span></li>
+                    <li>pageY :<span class="offsetY">0</span></li>
+                </ul>
+            </div>
+            <div class="txt">
+                <p><em class="move">Move</em> the mouse.</p>
+                <p>마우스를 <em class="move">움직여보세요</em>.</p>
+            </div>
+        </div>
+    </div>
+    <!-- script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script>
+          $(window).mousemove(function(e){ 
+            $(".offsetX").text(e.clientX);  //이벤트 clientX값을 화면에 출력
+            $(".offsetY").text(e.clientY); //이벤트 clientY값을 화면에 출력
+        });
+
+        //마우스 커서 이동
+        $(window).mousemove(function(e) {
+            gsap.to(".cursor", {
+                duration: .2,
+                left: e.pageX - 7,
+                top: e.pageY - 7
+            });
+        });
+
+        window.addEventListener("mousemove", function(e) {
+            document.querySelectorAll(".move").forEach(elem => {
+                const {
+                    x,
+                    y
+                } = e;
+                const rect = elem.getBoundingClientRect();
+                const mouseX = (x - rect.left - rect.width / 2) / 20;
+                const mouseY = (y - rect.top - rect.height / 2) / 20;
+
+                elem.style.textShadow = `${mouseX}px ${-mouseY}px 0px rgba(255, 255, 255, 0.3),
+                                                 ${-mouseX}px ${mouseY}px 0px rgba(32, 178, 170, 1),
+                                                 ${mouseY}px ${-mouseX}px 0px rgba(245, 96, 96, 0.9),
+                                                 ${-mouseY}px ${mouseX}px 0px rgba(235, 201, 53, 0.8)`;
+            })
+        });
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript</title>
+
+    <!--style-->
+    <link rel="stylesheet" href="../assets/css/reset.css">
+
+    <style>
+        .script {
+            width: 100vw;
+            height: 100vh;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slider-wrap {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .slider-img {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slider-img .sliders {
+            float: left;
+        }
+
+        .sliders {
+            width: 100%;
+            height: 100%;
+        }
+
+        .sliders img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .slider-btn a {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1000;
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.5);
+            width: auto;
+            font-size: 22px;
+            text-transform: uppercase;
+            font-family: 'Advent Pro', sans-serif;
+            color: #fff;
+
+        }
+
+        .slider-btn .prev {
+            left: 0;
+        }
+
+        .slider-btn .next {
+            right: 0;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="script">
+        <div class="slider-wrap">
+            <div class="slider-img">
+                <div class="sliders s1"><img src="img/script_img03_1.jpg" alt="이미지1"></div>
+                <div class="sliders s2"><img src="img/script_img03_2.jpg" alt="이미지2"></div>
+                <div class="sliders s3"><img src="img/script_img03_3.jpg" alt="이미지3"></div>
+            </div>
+        </div>
+        <div class="slider-btn">
+            <a href="javascript:click()" class="prev">prev</a>
+            <a href="javascript:click()" class="next">next</a>
+        </div>
+    </div>
+    <!-- script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        //02
+        const sliderWrap = $(".slider-wrap");
+        const sliderImg = $(".slider-img");
+        const sliders = $(".sliders");
+        const sliderBtn = $(".slider-btn");
+
+        let slideCount = sliders.length;
+        let slideWidth = sliders.width();
+        let slideHeight = sliders.height();
+        let slideTotalWidth = slideCount * slideWidth;
+
+        sliders.css({
+            width: slideWidth,
+            height: slideHeight
+        });
+        sliderImg.css({
+            width: slideTotalWidth,
+            height: slideHeight
+        });
+        sliderImg.css({
+            marginLeft: -slideWidth
+        });
+        $(".sliders:last-child").prependTo(sliderImg);
+
+        function moveLeft() {
+            sliderImg.animate({
+                left: +slideWidth
+            }, 400, function() {
+                $(".sliders:last-child").prependTo(sliderImg);
+                sliderImg.css("left", "");
+            });
+        }
+
+        function moveRight(e) {
+            sliderImg.animate({
+                left: -slideWidth
+            }, 400, function() {
+                $(".sliders:first-child").appendTo(sliderImg);
+                sliderImg.css("left", "");
+            });
+        }
+
+        sliderBtn.find(".prev").click(function() {
+            moveLeft()
+        });
+        sliderBtn.find(".next").click(function() {
+            moveRight()
+        });
+
+    </script>
+</body>
+
+</html>
